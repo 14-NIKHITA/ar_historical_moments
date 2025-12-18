@@ -11,7 +11,12 @@
       <!-- AR marker -->
       <a-marker preset="hiro">
         <!-- 3D Box Example -->
-        <a-box position="0 0.5 0" material="color: red;"></a-box>
+        <a-entity
+  gltf-model="model.gltf"
+  scale="0.5 0.5 0.5"
+  position="0 0 0"
+  rotation="0 180 0">
+</a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
