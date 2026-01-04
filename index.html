@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>AR Time Capsule - Abdul Kalam</title>
 
-  <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-
-  <!-- AR.js -->
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
 
   <style>
@@ -21,32 +18,26 @@
 <body>
   <a-scene
     embedded
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-    renderer="colorManagement: true;"
+    arjs="sourceType: webcam; debugUIEnabled: true;"
   >
 
-    <!-- HIRO Marker -->
-    <a-marker preset="hiro">
+    <!-- CUSTOM MARKER -->
+    <a-marker type="pattern" url="pattern-marker.patt">
 
-      <!-- LIGHT (IMPORTANT) -->
-      <a-entity light="type: ambient; intensity: 1.2"></a-entity>
-      <a-entity light="type: directional; intensity: 0.8" position="1 2 1"></a-entity>
+      <!-- TEST BOX (must appear) -->
+      <a-box color="red" position="0 0.5 0"></a-box>
 
-      <!-- Abdul Kalam Model -->
-
-       <a-box color="red" position="0 0.5 0"></a-box>
+      <!-- Kalam Model -->
       <a-entity
-        gltf-model="./kalam.glb"
+        gltf-model="kalam.glb"
         scale="0.2 0.2 0.2"
-        position="0 0.1 0"
+        position="0 0 0"
         rotation="0 180 0">
       </a-entity>
 
     </a-marker>
 
-    <!-- Camera -->
     <a-entity camera></a-entity>
-
   </a-scene>
 </body>
 </html>
